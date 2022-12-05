@@ -32,6 +32,7 @@
     skid_flag      = 0;    // Set or check if we're skidding.
     skid_direction = 1;    // The facing direction while we're skidding.
     skid_threshold = 1.15; // How fast the character needs to move to trigger skidding.
+    skid_smoke_delay = 6;    // How many frames it takes to spawn a smoke particle.
     
  // Tile variables:
     tile_angle           = 0;  // Angle of the current tile you're colliding with.
@@ -41,7 +42,7 @@
     is_underwater = false; // Gets/Sets the characters underwater state.
 	
  // Life points.
-	life_points	= 4;	// Set up life points.
+	life_points	= 3;	// Set up life points.
 
  #endregion
 
@@ -64,8 +65,9 @@
  // Acceleration / Deceleration:
     phy_acceleration_walk   = 0.037109375;  // Acceleration while walking.
     phy_acceleration_run    = 0.0556640625; // Acceleration while running.
-    phy_deceleration_ground = 0.05078125;   // Deceleration on ground.
-    phy_deceleration_skid   = 0.1015625;    // Skid deceleration on ground.
+    phy_acceleration_dash   = 0.0764026253; // Acceleration while dashing.
+    phy_deceleration_ground = 0.0375;   // Deceleration on ground.
+    phy_deceleration_skid   = 0.075;    // Skid deceleration on ground.
     phy_acceleration_air    = 0.0546875;    // Acceleration while in the air. 
     phy_deceleration_air    = 0.125;        // Deceleration while in the air.
     
@@ -81,14 +83,14 @@
     phy_downhill_add_75d    = 0.7875; // Speed added while walking down 75° tiles.
 	
  // Jump heights:
-    phy_jump_height = [-5.1135, -5.1435, -5.1835]; // The jump height. 
+    phy_jump_height = -5.1135; // The jump height. 
    
  // Rebound heights:
-    phy_jump_rebound = -4.4535 // Enemy rebound height.
+    phy_jump_rebound = -4.4535; // Enemy rebound height.
     
  // Gravity:
-    phy_gravity[0] = 0.0625; // Gravity that applies if vertical speed is less than -2 and we're holding jump.
-    phy_gravity[1] = 0.3125; // Gravity that applies when the player lets go of the jump button or his vertical speed is more than 0.
+    phy_gravity[0] = 0.3026; // Gravity that applies if vertical speed is less than -2 and we're holding jump.
+    phy_gravity[1] = 0.3026; // Gravity that applies when the player lets go of the jump button or his vertical speed is more than 0.
     phy_fall_max   = 6.3125; // How fast the player is allowed to fall.
 	
  #endregion 
