@@ -70,7 +70,9 @@
     phy_deceleration_skid   = 0.075;    // Skid deceleration on ground.
     phy_acceleration_air    = 0.0546875;    // Acceleration while in the air. 
     phy_deceleration_air    = 0.125;        // Deceleration while in the air.
-    
+    phy_horizontal_acc      = 0.065;  // Horizontal acceleration speed.
+    phy_horizontal_acc_skid = 0.15;   // Horizontal acceleration while skidding.
+	
  // Slope physics:
     phy_uphill_max_walk     = 0.8125; // The max. horizontal walking speed while going uphill.
     phy_uphill_max_run      = 1.375;  // The max. horizontal running speed while going uphill.  
@@ -83,15 +85,15 @@
     phy_downhill_add_75d    = 0.7875; // Speed added while walking down 75° tiles.
 	
  // Jump heights:
-    phy_jump_height = -5.1135; // The jump height. 
+    phy_jump_height = 5.1135; // The jump height. 
    
  // Rebound heights:
-    phy_jump_rebound = -4.4535; // Enemy rebound height.
+    phy_jump_rebound = 4.4535; // Enemy rebound height.
     
  // Gravity:
-    phy_gravity[0] = 0.3026; // Gravity that applies if vertical speed is less than -2 and we're holding jump.
+    phy_gravity[0] = 0.1940; // Gravity that applies if vertical speed is less than -2 and we're holding jump.
     phy_gravity[1] = 0.3026; // Gravity that applies when the player lets go of the jump button or his vertical speed is more than 0.
-    phy_fall_max   = 6.3125; // How fast the player is allowed to fall.
+    phy_fall_max   = 8; // How fast the player is allowed to fall.
 	
  #endregion 
  

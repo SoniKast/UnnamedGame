@@ -3,18 +3,24 @@
 
 function fs_character_movement_vertical()
 {
-	
 	 // Gravity:
 	    if(ground == false)
 	    {
-	       if(y_speed < -2 && button_a[input.hold])
-	       {
-	          y_speed += phy_gravity[0];
-	       }
-	       else
-	       {
-	          y_speed += phy_gravity[1];
-	       }
+			if(state == char_state.jump)
+		    {
+		        if(y_speed <= -0.5) // You start falling faster when y_speed is > -0.5.
+		        {
+		            y_speed += phy_gravity[0];
+		        }
+		        else
+		        {
+		            y_speed += phy_gravity[1];
+		        }
+		    }
+		    else
+		    {
+		        y_speed += phy_gravity[1];
+		    }
 	    }
 	    else
 	    {
@@ -32,6 +38,5 @@ function fs_character_movement_vertical()
 	    {
 	       skid_flag = 0;
 	    }
-		
-		
+	
 }

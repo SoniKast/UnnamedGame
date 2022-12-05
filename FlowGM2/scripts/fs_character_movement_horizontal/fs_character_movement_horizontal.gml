@@ -1,150 +1,197 @@
 /// @description fs_character_movement_horizontal()
  // Handle the horizontal movement of the character.
-
+ 
 function fs_character_movement_horizontal()
 {
- 
-	 // Ground movement:
-	    if(ground == true)
-	    { 
-	       // Set acceleration and running frames.
-	          var accel_handle;
-       
-	          if(button_b[input.hold])
-	          {
-	             accel_handle = phy_acceleration_run;
-	          }
-	          else // Regular walk acceleration.
-	          {
-	             accel_handle = phy_acceleration_walk;
-	          }
-          
-	       // Set the maximum speed the character can horizontally move.
-	          fs_character_set_horizontal_limit(true);
 
-	       // Movement to the right.
-	          if(dpad_right[input.hold] && not (crouching == true))
-	          {
-	             if(x_speed < 0) // Decelerate / Skid.
-	             {
-	                skid_flag = 1;
-	                if(x_speed > -phy_speed_turn) { x_speed = 0; }
-	                else
-	                {
-	                   x_speed += phy_deceleration_skid;
-	                }
-	             }
-	             else // Accelerate.
-	             {
-	                skid_flag = 0;
-	                if(x_speed = 0)
-	                {
-	                   x_speed     = phy_min_walk;
-	                   x_speed_max = phy_max_walk;
-	                }
-	                else
-	                {
-	                   x_speed = fs_approach(x_speed, x_speed_handle, accel_handle);
-	                }                              
-	             }
-	          }
-          
-	       // Movement to the left.
-	          if(dpad_left[input.hold] && not (crouching == true))
-	          {
-	             if(x_speed > 0) // Decelerate / Skid.
-	             {
-	                skid_flag = 1;
-	                if(x_speed < phy_speed_turn) { x_speed = 0; }
-	                else
-	                {
-	                   x_speed -= phy_deceleration_skid;
-	                }
-	             }
-	             else // Accelerate.
-	             {
-	                skid_flag = 0;
-	                if(x_speed = 0)
-	                {
-	                   x_speed = -phy_min_walk;
-	                }
-	                else
-	                {
-	                    x_speed = fs_approach(x_speed, -x_speed_handle, accel_handle);
-	                }
-	             }
-	          }       
-
-	      // No input, so decelerate.
-	         if(!dpad_left[input.hold] && !dpad_right[input.hold] || crouching == true)
-	         {          
-	            if(skid_flag == 1)
-	            {
-	               skid_flag = 0;
-	            }
-            
-	            var decel;
-	            decel = phy_deceleration_ground;
-            
-	            if(x_speed >  decel) { x_speed -= decel; }
-	            else
-	            if(x_speed < -decel) { x_speed += decel; }
-	            else                 { x_speed  = 0; skid_flag = 0; }
-	         } 
-	    }
-		else // In air movement.
-		{ 
-	         // Set the maximum speed the character can horizontally move.
-	            if(abs(x_speed) <> phy_max_walk)
-	            {
-	               if(!button_b[input.hold])
-	               {
-	                  x_speed_handle = phy_max_walk;
-	               }
-	            }
-	            if(abs(x_speed) <> phy_max_run && button_b[input.hold])
-	            {            
-	               x_speed_handle = phy_max_run;
-	            }
-
-	         // Movement to the right.
-	            if(dpad_right[input.hold])
-	            {
-	               if(x_speed >= 0) // Accelerate.
-	               {
-	                  if(x_speed < x_speed_handle)
-	                  {
-	                     x_speed = fs_approach(x_speed, x_speed_handle, phy_acceleration_air); 
-	                  }
-	               }
-	               else
-	               {
-	                  if(x_speed < 0) // Decelerate.
-	                  {
-	                     x_speed = fs_approach(x_speed, x_speed_handle, phy_deceleration_air); 
-	                  }                  
-	               }
-	            }
+ // Update the max. movement speed.
+ // We change this depending on the the run button input.
+    if(ground == true)
+    {
+       // Set the speed to running:
+       if(button_b[input.hold] == true)
+       {
+          if(phy_max_horizontal < phy_max_dash)
+          {
+              phy_max_horizontal = phy_max_run;     
+          }
+          if(alarm[0] == -1)
+          {
+              alarm[0] = 80;
+          }      
+       }
+       else
+       {
+            phy_max_horizontal = phy_max_walk;
+       }
+    }
+    
+ // Movement to the right.
+    if(dpad_right[input.hold] && !dpad_left[input.hold])
+    {
+       // Accelerate, if the horizontal speed is equal or larger than 0.
+          if(x_speed >= 0)
+          {
+             // Disable the skidding flag, if it's turned on. 
+                if(skid_flag == 1)
+                {
+                   skid_flag = 0;
+                }
                 
-	         // Movement to the left.
-	            if(dpad_left[input.hold])
-	            {
-	               if(x_speed <= 0) // Accelerate.
-	               {
-	                  if(x_speed > -x_speed_handle)
-	                  {
-	                     x_speed = fs_approach(x_speed, -x_speed_handle, phy_acceleration_air); 
-	                  }                
-	               }
-	               else
-	               {
-	                  if(x_speed > 0) // Decelerate.
-	                  {
-	                     x_speed = fs_approach(x_speed, -x_speed_handle, phy_deceleration_air); 
-	                  }
-	               }
-	            }       
-           
-		}
+             // Add to the horizontal speed.
+				if(x_speed != phy_max_horizontal)
+				{
+				  x_speed += phy_horizontal_acc;
+				}
+                
+             // Limit the max. speed.
+                if(x_speed > phy_max_horizontal)
+                {
+                   x_speed = phy_max_horizontal;
+                }
+          }
+          else // Change direction and/or skid.
+          {   
+                  if(ground == true)
+                  {
+                     if(x_speed <= -skid_threshold)
+                     {
+                        // Enable skidding.
+                           skid_flag      = 1;
+                           skid_direction = sign(x_speed);
+                     }
+                     else
+                     {
+                        // Change the direction of the character.
+                           x_speed *= -0.1;
+                     }
+                     
+                     // Skid accelerate:
+					x_speed += phy_horizontal_acc_skid/1.45;
+
+					// Smoke effect:
+					if(instance_number(obj_char_smoke) < 6)
+					{
+						if(--skid_smoke_delay <= 0)
+						{
+							skid_smoke_delay = 6;
+							instance_create_depth(x, y, -5, obj_char_smoke);
+						}
+					}
+					// sfx_play(snd_char_skid, game.sfx_volume, 1, 1);  
+                  }
+                  else // In the air, always decelerate using the skid values.
+                  {
+                          x_speed += phy_horizontal_acc_skid;
+                  }
+          }
+    }
+    
+    
+ // Movement to the left.
+    if(!dpad_right[input.hold] && dpad_left[input.hold])
+    {
+       // Accelerate, if the horizontal speed is equal or less than 0.
+          if(x_speed <= 0)
+          {
+             // Disable the skidding flag, if it's turned on. 
+                if(skid_flag == 1)
+                {
+                   skid_flag = 0;
+                }
+                
+             // Add to the horizontal speed.
+				if(x_speed != -phy_max_horizontal)
+				{
+				  x_speed -= phy_horizontal_acc;
+				}
+                
+             // Limit the max. speed.
+                if(x_speed < -phy_max_horizontal)
+                {
+                   x_speed = -phy_max_horizontal;
+                }
+          }
+          else // Change direction and/or skid.
+          {   
+                  if(ground == true)
+                  {
+                     if(x_speed >= skid_threshold)
+                     {
+                        // Enable skidding.
+                           skid_flag      = 1;
+                           skid_direction = sign(x_speed);
+                     }
+                     else
+                     {
+                        // Change the direction of the character.
+                           x_speed *= -0.1;
+                     }
+                     
+                     // Skid accelerate:
+					x_speed -= phy_horizontal_acc_skid/1.45;
+
+					// Smoke effect:
+					if(instance_number(obj_char_smoke) < 6)
+					{
+						if(--skid_smoke_delay <= 0)
+						{
+							skid_smoke_delay = 6;
+							instance_create_depth(x, y, -5, obj_char_smoke);
+						}
+					}
+					// sfx_play(snd_char_skid, game.sfx_volume, 1, 1);  
+                  }
+                  else // In the air, always decelerate using the skid values.
+                  {
+                          x_speed -= phy_horizontal_acc_skid;
+                  }
+          }
+    }
+    
+ // Decelerate if no input is given.
+    if(!dpad_right[input.hold] && !dpad_left[input.hold]) 
+    {
+       if(ground == true)
+       {
+          // Decelerate until we stop.
+             if(skid_flag == 0)
+             {
+				x_speed = max(0, abs(x_speed)-phy_deceleration_ground)*sign(x_speed);
+             }
+             else
+             {
+				x_speed = max(0, abs(x_speed)-phy_deceleration_ground*2)*sign(x_speed);         
+             }
+             
+          // Clamp horizontal speed to 0.
+             if((x_speed < phy_deceleration_ground) && (x_speed > -phy_deceleration_ground))
+             {
+                if(skid_flag == 1)
+                {
+                   skid_flag = 0;
+                }
+                x_speed = 0;
+             }                          
+       }
+       else // Slowly come to a stop mid air.
+       {
+            // Decelerate until we stop:             
+               x_speed = max(0, abs(x_speed)-phy_deceleration_ground/2)*sign(x_speed);    
+                     
+            // Clamp horizontal speed to 0.
+               if((x_speed < phy_deceleration_ground) && (x_speed > -phy_deceleration_ground))
+               {
+                  x_speed = 0;
+               }   
+       }
+    }
+            
+ // Revert skid flag if not grounded.
+    if(!ground)
+    {
+       skid_flag = 0;
+    }
 		
 }
+    
