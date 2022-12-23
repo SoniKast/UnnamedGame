@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/balla/source/repos/Ping/Ping/Content/dontknow.png","C:/Users/balla/source/repos/Ping/Ping/Content/bin/DesktopGL/dontknow.xnb","TextureProcessor","Texture2DContent",1235,16469,0,1299362
+"C:/Users/balla/source/repos/Ping/Ping/Content/FortyFeet.ogg","C:/Users/balla/source/repos/Ping/Ping/Content/bin/DesktopGL/FortyFeet.xnb","SongProcessor","SongContent",2194801,127,3,0969925

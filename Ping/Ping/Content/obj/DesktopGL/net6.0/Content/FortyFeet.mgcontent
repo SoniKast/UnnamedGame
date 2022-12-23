@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/balla/source/repos/Ping/Ping/Content/FortyFeet.ogg</SourceFile>
+  <SourceTime>2022-12-21T20:23:30.5844885+01:00</SourceTime>
+  <DestFile>C:/Users/balla/source/repos/Ping/Ping/Content/bin/DesktopGL/Content/FortyFeet.xnb</DestFile>
+  <DestTime>2022-12-21T20:44:13.4837172+01:00</DestTime>
+  <Importer>OggImporter</Importer>
+  <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2022-07-26T13:44:56+02:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/balla/source/repos/Ping/Ping/Content/bin/DesktopGL/Content/FortyFeet.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>
