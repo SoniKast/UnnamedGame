@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/Music/kaz.ogg</SourceFile>
+  <SourceTime>2022-12-24T22:51:23.8572723+01:00</SourceTime>
+  <DestFile>D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/bin/DesktopGL/Music/kaz.xnb</DestFile>
+  <DestTime>2022-12-24T23:50:59.1771497+01:00</DestTime>
+  <Importer>OggImporter</Importer>
+  <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2022-07-26T13:44:56+02:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/bin/DesktopGL/Music/kaz.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>

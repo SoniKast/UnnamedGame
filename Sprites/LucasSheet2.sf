@@ -1,0 +1,49 @@
+{
+  "textureAtlas": {
+    "texture": "LucasSheet2-export.png",
+    "regionWidth": 47,
+    "regionHeight": 55
+  },
+  "cycles": {
+    "idle": {
+      "frames": [0],
+      "isLooping": false,
+      "frameDuration": 0.2
+    },
+    "look": {
+      "frames": [1],
+      "isLooping": false,
+      "frameDuration": 0.2
+    },
+    "jump": {
+      "frames": [2],
+      "isLooping": false,
+      "frameDuration": 0.2
+    },
+    "fall": {
+      "frames": [3],
+      "isLooping": false,
+      "frameDuration": 0.2
+    },
+    "walk": {
+      "frames": [11,12,13,14,15,16,17,18],
+      "isLooping": true,
+      "frameDuration": 0.149999976
+    },
+    "jog": {
+      "frames": [22,23,24,25,26,27,28,29],
+      "isLooping": true,
+      "frameDuration": 0.09999997
+    },
+    "run": {
+      "frames": [33,34,35,36,37,38,39,40],
+      "isLooping": true,
+      "frameDuration": 0.0499999747
+    },
+    "skid": {
+      "frames": [44,45,46,47,48,49,50,51,52,53,54],
+      "isLooping": false,
+      "frameDuration": 0.2
+    }
+  }
+}

@@ -1,0 +1,6 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/Graphics/loading.png","D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/bin/DesktopGL/Graphics/loading.xnb","TextureProcessor","Texture2DContent",693,13541,0,1693123
+"D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/Graphics/LucasSheet2.png","D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/bin/DesktopGL/Graphics/LucasSheet2.xnb","TextureProcessor","Texture2DContent",12924,568785,0,0138647
+"D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/Music/kaz.ogg","D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/bin/DesktopGL/Music/kaz.xnb","SongProcessor","SongContent",112554,121,0,2765465
+"D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/SuperFantastisch.png","D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/bin/DesktopGL/SuperFantastisch.xnb","TextureProcessor","Texture2DContent",3123,226981,0,0122646
+"D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/title.png","D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/bin/DesktopGL/title.xnb","TextureProcessor","Texture2DContent",9400,518485,0,0263945
