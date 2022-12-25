@@ -264,11 +264,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\balla\\Documents\\Projects\\UnnamedGame\\Ping\\Ping\\TestGame.csproj",
+      "projectUniqueName": "C:\\Users\\balla\\Documents\\UnnamedGame\\TestGame\\TestGame\\TestGame.csproj",
       "projectName": "TestGame",
-      "projectPath": "D:\\Users\\balla\\Documents\\Projects\\UnnamedGame\\Ping\\Ping\\TestGame.csproj",
+      "projectPath": "C:\\Users\\balla\\Documents\\UnnamedGame\\TestGame\\TestGame\\TestGame.csproj",
       "packagesPath": "C:\\Users\\balla\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\balla\\Documents\\Projects\\UnnamedGame\\Ping\\Ping\\obj\\",
+      "outputPath": "C:\\Users\\balla\\Documents\\UnnamedGame\\TestGame\\TestGame\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

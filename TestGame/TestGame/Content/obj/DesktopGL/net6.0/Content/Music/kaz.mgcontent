@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/Music/kaz.ogg</SourceFile>
-  <SourceTime>2022-12-24T22:51:23.8572723+01:00</SourceTime>
-  <DestFile>D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/bin/DesktopGL/Content/Music/kaz.xnb</DestFile>
-  <DestTime>2022-12-24T23:31:50.2767485+01:00</DestTime>
+  <SourceFile>C:/Users/balla/Documents/UnnamedGame/TestGame/TestGame/Content/Music/kaz.ogg</SourceFile>
+  <SourceTime>2022-12-25T22:46:17.2463027+01:00</SourceTime>
+  <DestFile>C:/Users/balla/Documents/UnnamedGame/TestGame/TestGame/Content/bin/DesktopGL/Content/Music/kaz.xnb</DestFile>
+  <DestTime>2022-12-25T23:00:33.3481268+01:00</DestTime>
   <Importer>OggImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/bin/DesktopGL/Content/Music/kaz.ogg</string>
+    <string>C:/Users/balla/Documents/UnnamedGame/TestGame/TestGame/Content/bin/DesktopGL/Content/Music/kaz.ogg</string>
   </BuildOutput>
 </PipelineBuildEvent>

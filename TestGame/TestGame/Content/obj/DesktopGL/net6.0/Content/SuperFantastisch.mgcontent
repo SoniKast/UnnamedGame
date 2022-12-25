@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/SuperFantastisch.png</SourceFile>
-  <SourceTime>2022-12-24T21:37:10.8035698+01:00</SourceTime>
-  <DestFile>D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/bin/DesktopGL/Content/SuperFantastisch.xnb</DestFile>
-  <DestTime>2022-12-24T22:06:12.6717231+01:00</DestTime>
+  <SourceFile>C:/Users/balla/Documents/UnnamedGame/TestGame/TestGame/Content/SuperFantastisch.png</SourceFile>
+  <SourceTime>2022-12-25T22:46:17.260266+01:00</SourceTime>
+  <DestFile>C:/Users/balla/Documents/UnnamedGame/TestGame/TestGame/Content/bin/DesktopGL/Content/SuperFantastisch.xnb</DestFile>
+  <DestTime>2022-12-25T23:00:33.3900105+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

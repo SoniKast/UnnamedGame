@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SHfZEBqF4yqULE4Nx0UBiK43peHqxiDd5CkQ4xymEBIYBe4vFHll99I+FN4Txdvt+QH3B0X4zDdSDKYahQDyjA==",
+  "dgSpecHash": "yJkHlgwJcjPglSjMgSLCns71o8nzYrQvbltKb1bMkQ5kPp7JAMle2Ms3gFELPHoe5JuXctbI54ivMlZYDYAqiQ==",
   "success": true,
-  "projectFilePath": "D:\\Users\\balla\\Documents\\Projects\\UnnamedGame\\Ping\\Ping\\TestGame.csproj",
+  "projectFilePath": "C:\\Users\\balla\\Documents\\UnnamedGame\\TestGame\\TestGame\\TestGame.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\balla\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
     "C:\\Users\\balla\\.nuget\\packages\\monogame.extended\\3.8.0\\monogame.extended.3.8.0.nupkg.sha512",

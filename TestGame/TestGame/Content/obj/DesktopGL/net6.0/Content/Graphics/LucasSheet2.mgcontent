@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/Graphics/LucasSheet2.png</SourceFile>
-  <SourceTime>2022-12-24T14:29:51.3777983+01:00</SourceTime>
-  <DestFile>D:/Users/balla/Documents/Projects/UnnamedGame/Ping/Ping/Content/bin/DesktopGL/Content/Graphics/LucasSheet2.xnb</DestFile>
-  <DestTime>2022-12-25T17:34:16.4258148+01:00</DestTime>
+  <SourceFile>C:/Users/balla/Documents/UnnamedGame/TestGame/TestGame/Content/Graphics/LucasSheet2.png</SourceFile>
+  <SourceTime>2022-12-25T22:46:17.2453053+01:00</SourceTime>
+  <DestFile>C:/Users/balla/Documents/UnnamedGame/TestGame/TestGame/Content/bin/DesktopGL/Content/Graphics/LucasSheet2.xnb</DestFile>
+  <DestTime>2022-12-25T23:00:32.1823026+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

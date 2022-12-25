@@ -2,11 +2,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-// using MonoGame.Extended.Entities;
 using MonoGame.Extended.Screens;
 using MonoGame.Extended.Screens.Transitions;
-using TestGame.Main;
+using TestGame.Main.Screens;
 
 namespace TestGame
 {
@@ -15,7 +13,7 @@ namespace TestGame
         public GraphicsDeviceManager _graphics;
         public SpriteBatch _spriteBatch;
         private Texture2D _loading;
-        private KeyboardState keyState;
+        public KeyboardState keyState;
         private readonly ScreenManager _screenManager;
 
         public Vector2 sprite_position;
@@ -48,6 +46,11 @@ namespace TestGame
             _screenManager.LoadScreen(new Options(this), new FadeTransition(GraphicsDevice, Color.Black));
         }
 
+        private void LoadLevel1()
+        {
+            _screenManager.LoadScreen(new Level1(this), new FadeTransition(GraphicsDevice, Color.White));
+        }
+
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -67,13 +70,17 @@ namespace TestGame
             if (keyState.IsKeyDown(Keys.Escape))
                 Exit();
             
-            if (keyState.IsKeyDown(Keys.Down))
+            if (keyState.IsKeyDown(Keys.NumPad1))
             {
                 LoadTitleScreen();
             }
-            if (keyState.IsKeyDown(Keys.Up))
+            if (keyState.IsKeyDown(Keys.NumPad2))
             {
                 LoadOptions();
+            }
+            if (keyState.IsKeyDown(Keys.NumPad3))
+            {
+                LoadLevel1();
             }
 
             base.Update(gameTime);
